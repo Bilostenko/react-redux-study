@@ -14,8 +14,11 @@ function Likes(props) {
 
 function mapStateToProps(state){
   console.log('mapStateToProps >', state);
+  const { likesReducer } = state;  
+  // вище у нас андефайнед. компонент не отримує стейт
+
   return{
-    like:state.like
+    like:likesReducer.like
   }
 }
 
