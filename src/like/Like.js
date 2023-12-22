@@ -1,6 +1,7 @@
 import "./like.css";
 
 import { connect } from "react-redux";
+import { increment, decrement } from "../actions";
 
 function Likes(props) {
   console.log(props);
@@ -12,21 +13,20 @@ function Likes(props) {
   );
 }
 
-function mapStateToProps(state){
+function mapStateToProps(state) {
   console.log('mapStateToProps >', state);
-  const { likesReducer } = state;  
+  const { like } = state;  
   // вище у нас андефайнед. компонент не отримує стейт
-
-  return{
-    like:likesReducer.like
+  return {
+    like: like.like
   }
 }
 
 
-function mapDispatchToProps(dispacth){
-  return{
-    onIncrementLikes:()=> dispacth({type:'INCREMENT'}),
-    onDecrementLikes:()=> dispacth({type:'DECREMENT'})
+function mapDispatchToProps(dispacth) {
+  return {
+    onIncrementLikes: () => dispacth(increment()),
+    onDecrementLikes: () => dispacth(decrement())
   }
 }
 

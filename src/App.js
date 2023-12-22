@@ -1,7 +1,8 @@
 import './App.css';
 
 import Likes from './like/Like';
-import store from './redux/store';
+import Title from './Title';
+import { rootReducer } from './redux/rootReducer';
 
 function App() {
   return (
@@ -9,8 +10,9 @@ function App() {
       <div className="wrap">
         <div className="card">
           <div className="card-image">
-            <img src="./sea.jpg" alt="surfing"/>
-            <Likes store={store}/>
+            <img src="./sea.jpg" alt="surfing" />
+            < Title />
+            <Likes store={rootReducer} />
           </div>
         </div>
       </div>

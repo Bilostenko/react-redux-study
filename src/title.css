@@ -1,0 +1,27 @@
+.card-title {
+  font-family: Arial, sans-serif;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-title-top {
+  display: flex;
+  align-items: center;
+}
+
+.card-title-top input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.card-title-top input[type="text"]:focus {
+  outline: none;
+  border-color: #3498db;
+  /* Пример изменения цвета рамки при фокусе */
+}
