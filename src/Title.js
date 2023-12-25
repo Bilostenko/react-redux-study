@@ -1,17 +1,26 @@
 import "./title.css"
-const Title =(props) => {
 
-  const handleChange = () => {
-    return (event) => {
-      props.onChange(event.target.value);
-    }
+import { useDispatch, useSelector } from "react-redux"
+import { inputText } from "./actions"
+const Title =(props) => {
+  const text = useSelector(state => {
+    const { inputReducer } = state;
+    return inputReducer.text;
+  });
+  
+  console.log(text)
+  
+  const dispatch = useDispatch()
+  const handleChange = (event) => {
+   dispatch(inputText(event.target.value))
   }
 
   return(
     <div className="card-title">
       <div className="card-title-top">
-        <input type="text" onChange={handleChange()} />
+        <input type="text" onChange={handleChange} />
       </div>
+      <p>{text}</p>
     </div>
   )
 }

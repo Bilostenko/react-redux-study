@@ -1,4 +1,4 @@
-import { INCREMENT, DECREMENT } from "./redux/types";
+import { INCREMENT, DECREMENT, INPUT_TEXT } from "./redux/types";
 
 export const increment = () => {
   return {
@@ -8,5 +8,12 @@ export const increment = () => {
 export const decrement = () => {
   return {
     type: DECREMENT
+  }
+}
+
+export const inputText = (text) => {
+  return {
+    type: INPUT_TEXT,
+    text
   }
 }

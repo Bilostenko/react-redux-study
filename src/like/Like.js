@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import { increment, decrement } from "../actions";
 
 function Likes(props) {
-  console.log(props);
   return (
     <div className="button-controls">
       <button className="like-button" onClick={props.onIncrementLikes}>🖤{props.like}</button>
@@ -14,9 +13,7 @@ function Likes(props) {
 }
 
 function mapStateToProps(state) {
-  console.log('mapStateToProps >', state);
   const { like } = state;  
-  // вище у нас андефайнед. компонент не отримує стейт
   return {
     like: like.like
   }
