@@ -1,14 +1,11 @@
 import "./title.css"
 
 import { useDispatch, useSelector } from "react-redux"
-import { inputText } from "./actions"
+import { inputText } from "../actions"
 const Title =(props) => {
   const text = useSelector(state => {
-    const { inputReducer } = state;
-    return inputReducer.text;
+    return state.text.text; 
   });
-  
-  console.log(text)
   
   const dispatch = useDispatch()
   const handleChange = (event) => {

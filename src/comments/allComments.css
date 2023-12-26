@@ -1,0 +1,50 @@
+/* Основний контейнер для коментарів */
+.card-commnets {
+  width: 100%;
+  max-width: 600px; /* Максимальна ширина для приведення до бажаного розміру */
+  margin: 0 auto; /* Центрування на сторінці */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Форма для створення нового коментаря */
+.comments-item-create {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.comments-item-create input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.comments-item-create input[type="submit"] {
+  display: none; /* Сховати кнопку submit */
+}
+
+/* Основний блок одного коментаря */
+.comments-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.comments-item input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.comments-item-delete {
+  font-size: 20px;
+  cursor: pointer;
+  color: red;
+}

@@ -1,7 +1,8 @@
 import './App.css';
 
 import Likes from './like/Like';
-import Title from './Title';
+import Title from './title/Title';
+import Comments from './comments/Comments';
 import { rootReducer } from './redux/rootReducer';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
             < Title />
             <Likes store={rootReducer} />
           </div>
+          < Comments />
         </div>
       </div>
     </div>
