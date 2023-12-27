@@ -2,7 +2,7 @@ import './allComments.css'
 import { useState } from 'react';
 
 import SingleComment from "./SingleComment";
-function Comments(props){
+function Comments(props) {
   console.log("comments >", props)
 
   const [textComment, setTexComment] = useState("")
@@ -12,11 +12,16 @@ function Comments(props){
     setTexComment(event.target.value)
   }
 
-  return(
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    console.log(textComment)
+  }
+
+  return (
     <div className="card-commnets">
-      <form className="comments-item-create">
-        <input type="text" value={textComment} onChange={handleInput}/>
-        <input type="submit" hiden/>
+      <form onSubmit={handleSubmit} className="comments-item-create">
+        <input type="text" value={textComment} onChange={handleInput} />
+        <input type="submit" hiden />
       </form>
       < SingleComment />
     </div>

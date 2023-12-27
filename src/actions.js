@@ -1,4 +1,4 @@
-import { INCREMENT, DECREMENT, INPUT_TEXT } from "./redux/types";
+import { INCREMENT, DECREMENT, INPUT_TEXT, COMMENT_CREATE } from "./redux/types";
 
 export const increment = () => {
   return {
@@ -15,5 +15,12 @@ export const inputText = (text) => {
   return {
     type: INPUT_TEXT,
     text
+  }
+}
+
+export const commentCreate = (text, id) => {
+  return {
+    type: COMMENT_CREATE,
+    text: {text, id}
   }
 }
