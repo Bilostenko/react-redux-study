@@ -21,6 +21,6 @@ export const inputText = (text) => {
 export const commentCreate = (text, id) => {
   return {
     type: COMMENT_CREATE,
-    text: {text, id}
+    data: {text, id}
   }
 }

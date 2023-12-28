@@ -1,29 +1,37 @@
 import './allComments.css'
 import { useState } from 'react';
-
+import { useDispatch, useSelector } from 'react-redux';
+import { commentCreate } from '../actions';
+import uniqid from 'uniqid';
 import SingleComment from "./SingleComment";
+
 function Comments(props) {
-  console.log("comments >", props)
 
   const [textComment, setTexComment] = useState("")
+  const comments = useSelector(state => {
+    const { commentReducer } = state
+    return commentReducer.comments
+  })
+  const dispatch = useDispatch()
 
   const handleInput = (event) => {
-    console.log("input >", event.target.value)
     setTexComment(event.target.value)
   }
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    console.log(textComment)
+    const id = uniqid()
+    dispatch(commentCreate(textComment, id))
+
   }
 
   return (
     <div className="card-commnets">
       <form onSubmit={handleSubmit} className="comments-item-create">
-        <input type="text" value={textComment} onChange={handleInput} />
+        <input type="text" value={textComment} onChange={handleInput} placeholder='Add a comment and press Enter' />
         <input type="submit" hiden />
       </form>
-      < SingleComment />
+      {comments.length && comments.map(comment => < SingleComment key={comment.id} comment={comment}/>)}
     </div>
   )
 }

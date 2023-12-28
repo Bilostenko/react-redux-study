@@ -24,6 +24,7 @@
 }
 
 .comments-item-create input[type="submit"] {
+  width: 20px;
   display: none; /* Сховати кнопку submit */
 }
 
