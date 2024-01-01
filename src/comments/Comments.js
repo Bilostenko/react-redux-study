@@ -31,7 +31,7 @@ function Comments(props) {
         <input type="text" value={textComment} onChange={handleInput} placeholder='Add a comment and press Enter' />
         <input type="submit" hiden />
       </form>
-      {comments.length && comments.map(comment => < SingleComment key={comment.id} comment={comment}/>)}
+      {!!comments.length && comments.map(comment => < SingleComment key={comment.id} comment={comment}/>)}
     </div>
   )
 }
