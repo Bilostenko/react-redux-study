@@ -27,13 +27,14 @@ export const commentCreate = (text, id) => {
 export const commentUpdate = (text, id) => {
   return {
     type: COMMENT_UPDATE,
-    data: {text, id}
-  }
-}
+    data: { text, id }
+  };
+};
 
-export const commentDelete = (text, id) => {
+
+export const commentDelete = (id) => {
   return {
     type: COMMENT_DELETE,
-    data: {text, id}
+    id
   }
 }

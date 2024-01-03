@@ -25,6 +25,7 @@ function Comments(props) {
 
   }
 
+  console.log("props commnt >>>",comments);
   return (
     <div className="card-commnets">
       <form onSubmit={handleSubmit} className="comments-item-create">

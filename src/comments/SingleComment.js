@@ -14,14 +14,13 @@ function SingleComment(props) {
   const handleUpdate = (event) => {
     event.preventDefault()
     return dispatch(commentUpdate(commentText, id))
+    
   }
-
   const handleDelete = (event) => {
-    event.preventDefault()
-    return dispatch(commentDelete(null, id))
-  } 
-  // перевірити
-
+    event.preventDefault();
+    dispatch(commentDelete(id)); 
+  };
+  
   useEffect(() => {
     if (text) {
       return setCommentText(text)
@@ -31,7 +30,7 @@ function SingleComment(props) {
   const handleInput = (event) => {
     return setCommentText(event.target.value)
   }
-
+ 
   return (
     <form className="comments-item" onSubmit={handleUpdate}>
       <div onClick={handleDelete} className="comments-item-delete">&times;</div>

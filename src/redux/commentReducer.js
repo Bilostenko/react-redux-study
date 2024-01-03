@@ -11,28 +11,28 @@ export const commentReducer = (state = initialState, action) => {
         ...state,
         comments: [...state.comments, action.data]
       };
-    case COMMENT_UPDATE:
-      const index = state.comments.findIndex(comment => comment.id === action.data.id);
-      const updatedComments = [
-        ...state.comments.slice(0, index),
-        action.data,
-        ...state.comments.slice(index + 1)
-      ];
+    case COMMENT_DELETE:
+    
+      // сonsole.log('action.data:', action.data);
+      const filteredComments = state.comments.filter(comment => comment.id !== action.id);
       return {
         ...state,
-        comments: updatedComments
+        comments: filteredComments
       };
-        // перевірити
-      case COMMENT_DELETE:
-        const deletedComments = [
+      case COMMENT_UPDATE:
+        console.log('action.id:', action.data.id); // Перевірка значення action.data.id
+        const index = state.comments.findIndex(comment => comment.id === action.data.id);
+        const updatedComments = [
           ...state.comments.slice(0, index),
           action.data,
           ...state.comments.slice(index + 1)
         ];
         return {
           ...state,
-          comments: deletedComments
+          comments: updatedComments
         };
+      
+      
     default:
       return state;
   }
