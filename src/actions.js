@@ -1,4 +1,9 @@
-import { INCREMENT, DECREMENT, INPUT_TEXT, COMMENT_CREATE, COMMENT_UPDATE, COMMENT_DELETE} from "./redux/types";
+import { INCREMENT, 
+  DECREMENT, INPUT_TEXT, 
+  COMMENT_CREATE, COMMENT_UPDATE, 
+  COMMENT_DELETE,
+  COMMENT_LOAD
+} from "./redux/types";
 
 export const increment = () => {
   return {
@@ -36,5 +41,19 @@ export const commentDelete = (id) => {
   return {
     type: COMMENT_DELETE,
     id
+  }
+}
+
+export const commentsLoad= () => {
+  
+  return async dispatch =>{
+    const response = await fetch('https://jsonplaceholder.typicode.com/comments?_limit=10')
+    const jsonData = await response.json()
+
+    dispatch({
+      type: COMMENT_LOAD,
+      data: jsonData
+    })
+
   }
 }
