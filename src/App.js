@@ -3,14 +3,12 @@ import './App.css';
 import Likes from './like/Like';
 import Title from './title/Title';
 import Comments from './comments/Comments';
-import Spin from './Spin';
 import { rootReducer } from './redux/rootReducer';
 
 function App() {
   return (
     <div className="App">
       <div className="wrap">
-        <Spin />
         <div className="card">
           <div className="card-image">
             <img src="./sea.jpg" alt="surfing" />
